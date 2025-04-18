@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chase-Board</title>
+    <link rel="stylesheet" href="style.CSS" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <ul>
+        <li><a href="../index.html" class="home">Home-Page</a></li>
+
+        <li>
+          <a href="../Periodic Table/periodictable.html">Periodic Table</a>
+        </li>
+        <li><a href="chase.html">Chase-Board</a></li>
+        <li><a href="../Resume First Assigment/cv.html" class="cv">Resume</a></li>
+      </ul>
+    </header>
+    <table>
+        <h1>This is the  Chase-board</h1>
+        <!-- THis is the first row  -->
+      <tr>
+        <td class="white">
+          <i class="fa-solid fa-chess-rook "></i>        </td>
+        <td class="green"><i class="fa-solid fa-chess-knight chess-icon"></i></td>
+        <td class="red"><i class="fa-solid fa-chess-bishop"></i></td>
+        </td>
+         <td class="green">
+        <i class="fa-solid fa-chess-queen"></i>        </td>
+        <td class="white"><i class="fas fa-chess-king"></i></td>
+        <td class="red"><i class="fa-solid fa-chess-bishop"></i></td>
+        <td class="white"><i class="fa-solid fa-chess-knight chess-icon"></i></td>
+        <td class="green"> <i class="fa-solid fa-chess-rook"></i></td>
+      </tr>
+      <!-- This is the second row  -->
+       <tr>
+        <td class="green"> 
+            <i class="fas fa-chess-pawn " ></i>
+
+        </td>
+        <td class="white"><i class="fas fa-chess-pawn"></i>
+        </td>
+        <td class="green"><i class="fas fa-chess-pawn"></i>
+        </td>
+        <td class="white"><i class="fas fa-chess-pawn"></i>
+        </td>
+        <td class="green"><i class="fas fa-chess-pawn"></i>
+        </td>
+        <td class="white"><i class="fas fa-chess-pawn"></i>
+        </td>
+        <td class="green"><i class="fas fa-chess-pawn"></i>
+        </td>
+        <td class="white"><i class="fas fa-chess-pawn"></i>
+        </td>
+       </tr>
+       <tr>
+        <td class="white"><p class="number " style="color: white;">6 </p>
+        </td>
+        <td class="green"></td>
+        <td  class="white"></td>
+        <td class="green"></td>
+        <td class="white"></td>
+        <td class="green"></td>
+        <td class="white"></td>
+        <td class="green"></td>
+       </tr>
+       <tr>
+        <td class="green"> <p class="number" style="color: green;">5</p></td>
+        <td class="white"></td>
+        <td class="green"></td>
+        <td class="white"></td>
+        <td class="green"></td>
+        <td class="white"></td>
+        <td class="green"></td>
+        <td class="white"></td>
+       </tr>
+       <!-- This is the fourth raw -->
+       <tr>
+        <td class="white"> <p class="number" style="color: white;">4</p></td>
+        <td class="green"></td>
+        <td class="white"></td>
+        <td class="green"></td>
+        <td class="white"></td>
+        <td class="green"></td>
+        <td class="white"></td>
+        <td class="green"></td>
+       </tr>
+       <!-- This is the fifth raw -->
+       <tr>
+        <td class="green"> <p class="number" style="color: green;">3</p></td>
+        <td class="white"></td>
+        <td class="green"></td>
+        <td class="white"></td>
+        <td class="green"></td>
+        <td class="white"></td>
+        <td class="green"></td>
+        <td class="white"></td>
+       </tr>
+       <td class="white"> 
+        <i class="fas fa-chess-pawn color"></i>
+
+    </td>
+    <td class="green"><i class="fas fa-chess-pawn color "></i>
+    </td>
+    <td class="white"><i class="fas fa-chess-pawn color"></i>
+    </td>
+    <td class="green"><i class="fas fa-chess-pawn color"></i>
+    </td>
+    <td class="white"><i class="fas fa-chess-pawn color"></i>
+    </td>
+    <td class="green"><i class="fas fa-chess-pawn color"></i>
+    </td>
+    <td class="white"><i class="fas fa-chess-pawn color"></i>
+    </td>
+    <td class="green"><i class="fas fa-chess-pawn color"></i>
+    </td>
+   </tr>
+   <tr>
+    <td class="green ">
+      <i class="fa-solid fa-chess-rook color"></i>        </td>
+    <td class="white"><i class="fa-solid fa-chess-knight chess-icon color"></i></td>
+    <td class="red"><i class="fa-solid fa-chess-bishop color"></i></td>
+    </td> <td class="white">
+    <i class="fa-solid fa-chess-queen color"></i>        </td>
+    <td class="green"><i class="fas fa-chess-king color"></i></td>
+    <td class="red"><i class="fa-solid fa-chess-bishop color"></i></td>
+    <td class="green"><i class="fa-solid fa-chess-knight chess-icon color"></i></td>
+    <td class="white"> <i class="fa-solid fa-chess-rook color"></i></td>
+  </tr>
+    </table>
+    <footer>
+      <p>&copy; 2025 All Rights Reserved to Abdul Ghaffar</p>
+    </footer>
+    
+      <script>
+  const pieces = document.querySelectorAll("i");
+
+  pieces.forEach(piece => {
+    piece.addEventListener("click", function () {
+      pieces.forEach(p => p.classList.remove("selected")); // remove from all
+      this.classList.add("selected"); // add to clicked one
+    });
+  });
+  let selectedCell = null;
+
+document.querySelectorAll("td").forEach((cell) => {
+  cell.addEventListener("click", () => {
+    // If no cell is selected yet
+    if (!selectedCell && cell.innerHTML.trim() !== "") {
+      selectedCell = cell;
+      cell.classList.add("selected"); // highlight it
+    } 
+    else if (selectedCell && cell !== selectedCell) {
+      // Move the icon from selectedCell to clicked cell
+      cell.innerHTML = selectedCell.innerHTML;
+      selectedCell.innerHTML = ""; // clear old cell
+
+      // Remove highlight
+      selectedCell.classList.remove("selected");
+      selectedCell = null; // reset
+    }
+  });
+});
+
+
+</script>
+
+    </scrip>
+  </body>
+</html>
